@@ -6,12 +6,10 @@ import axios from 'axios';
 
 const page = () => {
   const [Images, setImages] = useState([])
+  const [username, setUsername] = useState("")
+
 
   const getImages = async () =>{
-
-    // correct the code
-
-    
     try{
       const response = await axios.get("https://picsum.photos/v2/list")
       const data = response.data;
@@ -39,9 +37,19 @@ const page = () => {
            height={300}
            className='inline-block'
            />
-        })}
+        })} 
       </div>
 
+      <h1>Enter Username </h1>
+      <form>
+        <input type="text" value={username} 
+            onChange={
+              (e)=>{setUsername(e.target.value)
+              console.log(username)
+            }} 
+              
+              placeholder="Enter username"/>
+      </form>
     </>
   )
 }
