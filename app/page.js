@@ -4,6 +4,8 @@ import Hader from '@/Components/Hader';
 import Link from 'next/link';
 import axios from 'axios';
 import { MyContext } from './Helper/Contex';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const page = () => {
 
@@ -34,6 +36,11 @@ const page = () => {
     setUsers(data);
   }
   useEffect( ()=> {getUsers()}, []) //using this for calling function automatically means page lode hote he data aa jayega
+
+  const notify = () =>{
+    console.log("hello tost");
+    toast("Reset");
+  }
   return (
     <>
     <Hader name={'Parag'} surname={'Agarwal'}/>
@@ -77,6 +84,12 @@ const page = () => {
               )
               })
               }
+      </div>
+
+      <div>
+      <button onClick={notify} className='px-3 py-3 bg-green-700'>Tostify Button</button>
+      <ToastContainer />
+
       </div>
     </>
   )
