@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Hader from '@/Components/Hader';
 import Link from 'next/link';
 import axios from 'axios';
@@ -18,8 +18,17 @@ const page = () => {
     } catch(error){
       console.log("ERROR");
     }
-
   }
+
+  const [users, setUsers] = useState([])
+
+  const getUsers =async () =>{
+    const res = await axios.get("https://jsonplaceholder.typicode.com/users")
+    const data = res.data;
+    console.log(data);
+    setUsers(data);
+  }
+  useEffect( ()=> {getUsers()}, []) //using this for calling function automatically means page lode hote he data aa jayega
   return (
     <>
     <Hader name={'Parag'} surname={'Agarwal'}/>
@@ -40,6 +49,7 @@ const page = () => {
         })} 
       </div>
 
+
       <h1>Enter Username </h1>
       <form>
         <input type="text" value={username} 
@@ -50,6 +60,19 @@ const page = () => {
               
               placeholder="Enter username"/>
       </form>
+
+
+      <button onClick={getUsers} className='px-3 py-3 bg-green-700'>Get Data</button>
+      <div>
+        {users.map((user) => {
+          return (
+            <div>
+              <h1>{user.username} ---- <a href={`/${user.id}`}>Explore</a></h1>
+              </div>
+              )
+              })
+              }
+      </div>
     </>
   )
 }
