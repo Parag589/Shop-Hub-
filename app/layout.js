@@ -1,4 +1,5 @@
 // import { Inter } from 'next/font/google'
+import MyContext from './Helper/Contex'
 import './globals.css'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -11,7 +12,11 @@ import './globals.css'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+       <MyContext>
+          {children}
+       </MyContext>
+      </body>
     </html>
   )
 }

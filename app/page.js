@@ -1,10 +1,15 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Hader from '@/Components/Hader';
 import Link from 'next/link';
 import axios from 'axios';
+import { MyContext } from './Helper/Contex';
 
 const page = () => {
+
+  const user = useContext(MyContext)
+  console.log(user);
+
   const [Images, setImages] = useState([])
   const [username, setUsername] = useState("")
 
@@ -19,7 +24,7 @@ const page = () => {
       console.log("ERROR");
     }
   }
-
+ 
   const [users, setUsers] = useState([])
 
   const getUsers =async () =>{
