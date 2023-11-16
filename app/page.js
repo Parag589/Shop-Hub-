@@ -7,8 +7,6 @@ import Footer from '@/Components/Footer';
 import { FaBagShopping } from "react-icons/fa6";
 import { FaExpandArrowsAlt } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
-
-
 import Link from 'next/link';
 import axios from 'axios';
 import { MyContext } from './Helper/Contex';
@@ -114,9 +112,6 @@ const page = () => {
         <button className="card-icon1 ">
           <FaSearch className="bag-icon card-icons" />
         </button>
-        {/* <button className="card-icon2 fixedicons">
-          <FaBagShopping className="bag-icon card-icons" />
-        </button> */}
       </div>
 
       
@@ -165,71 +160,6 @@ const page = () => {
         </div>
 
         <Footer/>
-      
-{/* 
-      <div>
-        {users2.map((user2) => {
-          return (
-            <div>
-              <h1>{user2.id} ---- <a href={`/${user2.id}`}>Explore</a></h1>
-            </div>
-          )
-        })
-        }
-      </div>
-
-      <div>
-        {users3.map((user3) => {
-          return (
-            <div>
-              <h1>{user3.id} ---- <a href={`/${user3.id}`}>Explore</a></h1>
-            </div>
-          )
-        })
-        }
-      </div>
-
-
-      <Hader name={'Parag'} surname={'Agarwal'} />
-      <Link href="/About">About</Link>
-      <Link href="/Courses">Cources</Link>
-
-      <button onClick={getImages} className='px-3 py-3 bg-green-700'>Get Images</button>
-
-      <div>
-        {Images.map((elem, i) => {
-          return <img
-            key={i}
-            src={elem.download_url}
-            width={300}
-            height={300}
-            className='inline-block'
-          />
-        })}
-      </div>
-
-
-      <h1>Enter Username </h1>
-      <form>
-        <input type="text" value={username}
-          onChange={
-            (e) => {
-              setUsername(e.target.value)
-              console.log(username)
-            }}
-
-          placeholder="Enter username" />
-      </form>
-
-
-      <button onClick={getUsers} className='px-3 py-3 bg-green-700'>Get Data</button>
-
-
-      <div>
-        <button onClick={notify} className='px-3 py-3 bg-green-700'>Tostify Button</button>
-        <ToastContainer />
-
-      </div> */}
     </>
   )
 }
