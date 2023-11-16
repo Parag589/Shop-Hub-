@@ -1,0 +1,12 @@
+"use client"
+import React, { useState } from 'react';
+
+const Shop = () => {
+  return (
+    <>
+    <div>Shop</div>
+    </>
+  )
+}
+
+export default Shop;
