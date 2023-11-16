@@ -15,7 +15,7 @@ function navbar() {
     <>
     
       {['lg'].map((expand) => (
-        <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
+        <Navbar key={expand} expand={expand} style={{ backgroundColor: "#f8d4bd" }} className="bg-body-tertiary mb-3">
           <Container fluid>
             <Navbar.Brand href="#">
             <button className='logo'>
